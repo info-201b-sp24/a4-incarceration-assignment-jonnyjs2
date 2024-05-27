@@ -49,7 +49,7 @@ What are possible limitations or problems with this data?   (at least 200 words)
 One possible limitation is the accuracy and completeness of the data, as it may rely on self-reporting by correctional facilities or estimates in some cases. Additionally, the data may not capture all relevant factors influencing prison and jail populations, such as socio-economic factors, mental health issues, or systemic biases in the criminal justice system. There may also be limitations in the granularity of the data, potentially limiting the depth of analysis that can be performed. Furthermore, changes in data collection methods or definitions over time could affect the comparability of data across different years.
 
 ### Trends Over Time Chart
-``````{r, echo = FALSE, code = readLines("chartOne.R")}
+```{r, echo = FALSE, code = readLines("chartOne.R")}
 ```
 
 
@@ -59,7 +59,7 @@ This chart was designed to visually compare the trends in total inmate populatio
 
 From the graph, we can observe how the total inmate population has changed over the years for each selected county. We can also compare the trajectories of different counties, which may reveal insights into factors such as changes in law enforcement practices, crime rates, or population demographics that influence inmate populations.
 ### Variable Comparison Chart
-``````{r, echo = FALSE, code = readLines("chartTwo.R")}
+```{r, echo = FALSE, code = readLines("chartTwo.R")}
 ```
 
 
@@ -68,13 +68,15 @@ The graph shown here details the relationship between total inmates and the rate
 This chart was designed to visually explore the relationship between the total number of inmates and the rate of black inmates in selected counties in Washington state. By using a scatter plot with a linear regression line, it becomes possible to observe any trends or patterns in how the rate of black inmates relates to the total inmate population across different counties.
 
 From the graph, we can observe the general trend between the total number of inmates and the rate of black inmates. The linear regression line helps to highlight this trend, showing whether there is a positive, negative, or neutral relationship between these variables. This analysis can provide insights into potential disparities or biases in the criminal justice system, as well as inform efforts to address racial equity in incarceration rates.
+
+
 ### Map
+```{r, echo = FALSE, code = readLines("Map.R")}
+```
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+This chart details the total jail population across different counties in Washington state. Each county is shaded according to its total jail population, with darker shades indicating higher populations and lighter shades indicating lower populations. The map provides a visual representation of the distribution of jail populations across the state, highlighting areas with higher or lower rates of incarceration.
 
-The last chart that you will create and include will show how a variable is distributed geographically. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
+The chart was designed to visually explore the geographic distribution of total jail populations in Washington state. By using a choropleth map, it becomes possible to identify regions with disproportionately high or low rates of incarceration, which can help inform discussions and policies related to criminal justice reform and equity.
 
-- Your map needs a title
-- Your color scale needs a legend with a clear label
-- Use a map based coordinate system to set the aspect ratio of your map
+From the map, we can observe significant variation in total jail populations across different counties in Washington state. Urban areas and certain regions show higher concentrations of incarceration, while other areas have lower rates. This visualization can help policymakers and researchers understand the geographic patterns of incarceration and identify areas where interventions or policy changes may be needed to address disparities in the criminal justice system.
 
