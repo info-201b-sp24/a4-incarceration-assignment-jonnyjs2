@@ -5,60 +5,69 @@ output: html_document
 
 ### Introduction
 
-An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
+In this analysis, we are focusing on jail incarceration rates by race in Washington state. Understanding the racial distribution of inmates in jails can shed light on disparities and biases within the criminal justice system. By analyzing variables such as the largest white population in a county, the largest black population in a county, and the counties with the highest jail populations, we aim to uncover patterns and disparities in the incarceration rates of different racial groups.
+
+county_largest_white_pop: This variable represents the county in Washington state with the largest white jail population rate. It is derived by filtering the dataset (jail_wa) to find the row where the white_jail_pop_rate is the maximum, indicating the county with the largest white jail population rate.
+
+county_largest_black_pop: Similar to county_largest_white_pop, this variable represents the county in Washington state with the largest black jail population rate, identified by filtering the dataset to find the maximum black_jail_pop_rate.
+
+jail_highest_pop: This variable represents the county in Washington state with the highest total jail population. It is derived by filtering the dataset to find the row where the total_pop is the maximum, indicating the county with the highest jail population.
+
+black_king_county: This variable represents the black jail population rate in King County, Washington, which is the county with the highest total jail population.
+
+white_king_county: Similar to black_king_county, this variable represents the white jail population rate in King County, Washington.
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+The county with the largest white jail population rate was Yakima County in 2018, with a rate of 865.49 per 100,000 population. This suggests a higher rate of white individuals in jail relative to the population size in Yakima County compared to other counties in Washington.
 
-These will likely be calculated using your DPLYR skills, answering questions such as: 
+The county with the largest black jail population rate was Pend Oreille County, with a rate of 31,000 per 100,000 population. This indicates a disproportionately high rate of black individuals in jail compared to the population size in Pend Oreille County, highlighting potential racial disparities in the criminal justice system.
 
-- What is the average value of my variable across all the counties (in the current year)?
-- Where is my variable the highest / lowest?
-- How much has my variable change over the last N years?
-
-Feel free to calculate and report values that you find relevant. Again, remember that the purpose is to think about how these measure of incarceration vary by race.
+King County has the highest total jail population with a staggering 2,233,163 people in 2018, indicating a significant number of individuals incarcerated in this county. Further analysis shows that the black jail population rate in King County is 827.5 per 100,000 population, while the white jail population rate is 166.06 per 100,000 population. This suggests a stark racial disparity in incarceration rates within King County, with a much higher rate of black individuals in jail compared to white individuals.
 
 ### The Dataset
 
 Who collected the data?  
-How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
-How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
-What are possible limitations or problems with this data?   (at least 200 words)
+The data for this assignment was collected by the Vera Institute
 
+How was the data collected or generated?  
+The data was likely collected through various means, including official records, surveys, and possibly direct reporting from correctional facilities or authorities. It may also have been generated through statistical modeling or estimation based on available data sources.
+
+Why was the data collected?  
+The data was collected to track and analyze trends in incarceration rates and related factors. Understanding these trends is crucial for policymakers, researchers, and advocacy groups to inform criminal justice reform efforts, address disparities, and improve the effectiveness and fairness of the justice system.
+
+How many observations (rows) are in your data? 
+1131
+
+How many features (columns) are in the data?  
+23
+
+What, if any, ethical questions or questions of power do you need to consider when working with this data?  
+When working with this data, ethical considerations include ensuring the privacy and confidentiality of individuals represented in the data, particularly inmates. There are also questions of power dynamics, as the data reflects the state's control and management of its prison population, raising issues of oversight, accountability, and the impact of policies on vulnerable populations.
+
+What are possible limitations or problems with this data?   (at least 200 words)
+One possible limitation is the accuracy and completeness of the data, as it may rely on self-reporting by correctional facilities or estimates in some cases. Additionally, the data may not capture all relevant factors influencing prison and jail populations, such as socio-economic factors, mental health issues, or systemic biases in the criminal justice system. There may also be limitations in the granularity of the data, potentially limiting the depth of analysis that can be performed. Furthermore, changes in data collection methods or definitions over time could affect the comparability of data across different years.
 
 ### Trends Over Time Chart
-
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The first chart that you will create and include will show the trend over time of your variable/topic. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - This may mean showing the same measure for different locations or different racial groups. Think carefully about a meaningful comparison of locations (e.g., the top 10 counties in a state, top 10 states, etc.)
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+``````{r, echo = FALSE, code = readLines("chartOne.R")}
 ```
 
+
+The graph shown here details the total number of inmates over the years for selected counties in Washington state. Each county is represented by a different colored line, allowing for a comparison of inmate populations across these counties over time. The x-axis represents the years, and the y-axis represents the total number of inmates. The title of the graph is "Total Inmates in Selected Counties Over the Years".
+
+This chart was designed to visually compare the trends in total inmate populations across different counties in Washington state over time. By using different colored lines for each county, it becomes easier to differentiate between them and identify any patterns or disparities in inmate populations.
+
+From the graph, we can observe how the total inmate population has changed over the years for each selected county. We can also compare the trajectories of different counties, which may reveal insights into factors such as changes in law enforcement practices, crime rates, or population demographics that influence inmate populations.
 ### Variable Comparison Chart
+``````{r, echo = FALSE, code = readLines("chartTwo.R")}
+```
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
 
-The second chart that you will create and include will show how two different (continuous) variables are related to one another. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
+The graph shown here details the relationship between total inmates and the rate of black inmates in selected counties in Washington state. Each point on the graph represents a county, with the x-axis showing the total number of inmates and the y-axis showing the rate of black inmates. The points are colored according to the county name for easier identification. Additionally, a linear regression line is added to show the general trend between total inmates and the rate of black inmates. The title of the graph is "Relationship Between Total Inmates and Black Inmates in Selected Counties".
 
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- If you choose to add a color encoding (not required), you need a legend for your different color and a clear legend title
+This chart was designed to visually explore the relationship between the total number of inmates and the rate of black inmates in selected counties in Washington state. By using a scatter plot with a linear regression line, it becomes possible to observe any trends or patterns in how the rate of black inmates relates to the total inmate population across different counties.
 
+From the graph, we can observe the general trend between the total number of inmates and the rate of black inmates. The linear regression line helps to highlight this trend, showing whether there is a positive, negative, or neutral relationship between these variables. This analysis can provide insights into potential disparities or biases in the criminal justice system, as well as inform efforts to address racial equity in incarceration rates.
 ### Map
 
 Include a chart. Make sure to describe why you included the chart, and what patterns emerged
